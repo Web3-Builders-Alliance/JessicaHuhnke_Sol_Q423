@@ -13,7 +13,7 @@ const myKeypairSigner = createSignerFromKeypair(umi, keypair);
 umi.use(signerIdentity(myKeypairSigner));
 
 // Define our Mint address
-const mint = new PublicKey("Ae8i89B7SpPHpmQSiCBZNLyEP22BScbUQyp2AsGPrAn2")
+const mint = new PublicKey("6s7hRhgAAiEzF4cV3HjNXF812BqtqQuTLQYqVH5kAjrJ")
 
 // Add the Token Metadata Program
 const token_metadata_program_id = new PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s')
@@ -37,8 +37,8 @@ const [metadata_pda, _bump] = PublicKey.findProgramAddressSync(metadata_seeds, t
                 payer: myKeypairSigner, 
                 updateAuthority: keypair.publicKey,
                 data: {
-                    name: "Jessica Token", 
-                    symbol: "JES",
+                    name: "Jess Token", 
+                    symbol: "JESS",
                     uri: "test_uri.org", 
                     sellerFeeBasisPoints: 0,
                     creators: null, 
