@@ -1,0 +1,24 @@
+name: Daily Cron Job
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Schedule to run at 0 UTC daily
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node 
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.5.0'
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile  # Modify this according to your project's requirements
+
+      - name: Run Airdrop Script
+        run: ts-node ./ts/tools/airdrop.ts
